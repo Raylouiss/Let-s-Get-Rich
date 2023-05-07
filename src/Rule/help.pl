@@ -1,0 +1,20 @@
+help :-
+    write('***** Command List ***** \n\n'),
+    write('1. map.                          - Menampilkan peta permainan dengan informasi setiap lokasi, keberadaan serta aset atau properti player. \n'),
+    write('2. checkPlayerDetail(X).         - Menampilkan informasi lokasi, uang, dan segala kepemilikan  dari player X.\n'),
+    write('3. checkLocationDetail(X).       - Menampilkan informasi lokasi dari X berupa nama, deskripsi, biaya sewa dan properti, serta pemilik lokasi tersebut.\n'),
+    write('4. checkPropertyDetail(x).       - Menampilkan informasi harga dan biaya sewa dari suatu lokasi X.  \n'),
+    write('5. throwDice.                    - Melakukan pelemparan dadu. Keterangan player yang melempar ditampilkan saat throwDice. \n'),
+    write('7. pakaiKartu.                   - Melakukan pemakaian kartu yang dimiliki.\n'),
+    write('8. beliProperti.                 - Melakukan pembelian properti pada lokasi dan giliran player saat itu. \n'),
+    write('9. akuisisiProperti.             - Melakukan akuisisi terhadap properti player lain pada lokasi dan giliran player saat itu. \n'),
+    write('10. bayarPenjara.                - Melakukan pembayaran untuk keluar dari penjara. Hanya boleh dilakukan jika current Player dalam penjara. \n'),
+    write('11. quitGame.                    - Keluar dari permainan.\n'),
+    write('12. buildGo.                     - Menampilkan serta memberi opsi beliProperti yang dimiliki player pada turn tersebut. Hanya dapat diakses pada lokasi go. \n'),
+    write('13. coinFlip.                    - Melakukan permainan bonus coinFlip pada lokasi cf. \n').
+    /*write('10. \n'),
+    write('11. \n'),
+    write('12. \n'),
+    write('13. \n'),
+    write('14. \n'),
+    write('15. \n').*/

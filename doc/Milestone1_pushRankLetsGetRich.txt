@@ -1,0 +1,419 @@
+/* MILESTONE 1 Kelompok pushRankLetsGetRich */
+
+/* Progress Report Milestone 1 */
+/* Pembagian Tugas Kelompok pushRankLetsGetRich */
+
+List Anggota Kelompok :
+1. Arleen Chrysantha Gunardi | 13521059
+2. Michael Jonathan Halim    | 13521124
+3. Marcel Ryan Antony        | 13521127
+4. Raynard Tanadi            | 13521143
+5. Kenneth Dave Bahana       | 13521145
+
+BAGI TUGAS (Deadline Senin, 14 November 2022)
+1. Fakta Mengenai Lokasi dan Properti (2 orang) 			: Arleen dan Raynard
+2. Bikin Print Papan (1 orang) 						: Marcel
+3. Bikin Rule Dadu (Randomizer) (1 orang) 				: Dave
+4. Tentuin Rule-Rule yang bakal dibuat (1 orang) 			: Michael
+5. Laporan 										: (Arleen Setup)
+
+BAGI TUGAS (Deadline Sabtu, 19 November 2022)
+1. Bikin File PL untuk deklarasi fakta Lokasi 			: Michael
+2. Bikin File PL untuk deklarasi fakta Properti 		: Arleen
+3. Buat Rule throwDice, chanceCard, dan parkirGratis 		: Dave & Michael
+4. Buat Rule checkLocationDetail dan checkPropertyDetail	: Marcel
+5. Buat Rule createPlayer, passGo, dan checkPlayerDetail	: Raynard
+
+I.    COMPLETED TASKS
+	- Rule Map (Cetak Map)
+	- Fakta Mengenai Lokasi dan Properti (Draft)
+	- Tentuin Rule-Rule Sementara yang bakal dibuat
+	- Setup Laporan
+
+II.   ONGOING TASKS
+	- Bikin File PL untuk deklarasi fakta Lokasi dan Properti
+	- Buat Rule Dadu (throwDice)
+	- Buat Rule checkLocationDetail
+	- Buat Rule checkPropertyDetail
+	- Buat Rule chanceCard
+	- Buat Rule parkirGratis
+	- Buat Rule createPlayer
+	- Buat Rule passGo
+	- Buat Rule checkPlayerDetail
+
+III.  UNSTARTED TASKS
+	- Rule-Rule lainnya yang perlu menggunakan rule yang sedang dibuat
+	- Menyelesaikan Laporan
+
+
+DETAIL LENGKAP RULE DAN FAKTA
+
+/* RULES */
+1. Papan
+- map.
+/* Akan mencetak map beserta posisi dari setiap pemain */
+
+2. Lokasi
+- checkLocationDetail(Location).
+/* Akan mencetak detail dari tiap lokasi */
+
+3. Properti
+- checkPropertyDetail(Property).
+/* Akan mencetak detail dari tiap properti */
+
+4. Chance Card
+- chanceCard.
+/* Akan melakukan pengambilan chance card oleh pemain yang sedang berada di lokasi chance card */
+
+5. Perpajakan
+- bayarPajak(Player).
+/* Player yang menginjak lokasi pajak harus membayar pajak sesuai aturan permainan */
+
+6. Penjara
+- masukPenjara(Player).
+/* Player ketika mendapatkan jumlah dice yang sama dalam tiga kali lempar berturut-turut atau mendapatkan kartu masuk penjara akan masuk penjara */
+
+- keluarPenjara(Player).
+/* Player ketika mendapatkan double saat melempar dadu atau sudah tiga kali melempar dadu */
+
+7. Parkir Gratis
+- parkirGratis(Player).
+/* Player tidak perlu membayar pajak jika menginjak lokasi parkir gratis */
+
+8. World Tour
+- worldTour(Player).
+/* Player dapat menuju ke seluruh tempat di map yang diinginkan kecuali world tour itu sendiri */
+
+9. Pemain
+- createPlayer.
+/* Membuat informasi detail dari player */
+- passGo(Player).
+/* Mendapatkan uang sebanyak yang ditentukan yaitu 200 ketika melewati GO */
+- checkPlayerDetail(Player).
+/* Mencetak informasi detail dari player */
+
+10. Dadu
+- throwDice.
+/* Melempar dadu untuk menentukan banyaknya langkah yang diambil pemain */
+
+11. Mekanisme Bangkrut
+- bankrupt(Player).
+/* Player dapat memilih untuk menjual propertinya jika kekayaan propertinya dapat melunasi pajak atau bangkrut jika sudah tidak memiliki kekayaan atau tidak ingin melanjutkan permainan */
+
+/* Fakta */
+
+Mata Uang
+LGR
+
+Nominal Awal Setiap Pemain
+1500 LGR
+
+Nominal Setiap Pemain Melewati GO
+200 LGR
+
+Nominal Untuk Keluar Dari Penjara Secara Instan
+50 LGR
+
+Nominal Untuk Berpindah Pada World Tour
+50 LGR
+
+Range Nominal Hadiah Chance Card
+Random antara 50, 100, 150, 200 LGR
+
+Harga Properti
+A1 : Jakarta
+Deskripsi : Jakarta adalah ibukota whichis.  
+Rent 0: 2 LGR
+Rent 1: 10 LGR
+Rent 2: 30 LGR
+Rent 3: 90 LGR
+Rent L: 160 LGR
+Akuisisi: 30 LGR
+Rumah 1: 50 LGR
+Rumah 2: 50 LGR
+Rumah 3: 50 LGR
+Landmark: 50 LGR
+
+A2 : Kuala Lumpur
+Deskripsi: Kuala Lumpur si paling twin
+Rent 0: 4 LGR
+Rent 1: 20 LGR
+Rent 2: 60 LGR
+Rent 3: 180 LGR
+Rent L: 320 LGR
+Akuisisi: 30 LGR
+Rumah 1: 50 LGR
+Rumah 2: 50 LGR
+Rumah 3: 50 LGR
+Landmark: 50 LGR
+
+A3 : Manila
+Deskripsi: Satu-satunya daerah yang memiliki air vanilla
+Rent 0: 6 LGR
+Rent 1: 30 LGR
+Rent 2: 90 LGR
+Rent 3: 270 LGR
+Rent L: 400 LGR
+Akuisisi: 50 LGR
+Rumah 1: 50 LGR
+Rumah 2: 50 LGR
+Rumah 3: 50 LGR
+Landmark: 50 LGR
+
+B1 : Bangkok
+Deskripsi: Satu-satunya kota yang bengkok
+Rent 0: 6 LGR
+Rent 1: 30 LGR
+Rent 2: 90 LGR
+Rent 3: 270 LGR
+Rent L: 400 LGR
+Akuisisi: 50 LGR
+Rumah 1: 50 LGR
+Rumah 2: 50 LGR
+Rumah 3: 50 LGR
+Landmark: 50 LGR
+
+B2 : Hanoi
+Deskripsi: Kota Matdeez
+Rent 0: 8 LGR
+Rent 1: 40 LGR
+Rent 2: 100 LGR
+Rent 3: 300 LGR
+Rent L: 450 LGR
+Akuisisi: 60 LGR
+Rumah 1: 50 LGR
+Rumah 2: 50 LGR
+Rumah 3: 50 LGR
+Landmark: 50 LGR
+
+B3 : Singapura
+Deskripsi: Singapura adalah kota singa dan pura
+Rent 0: 10 LGR
+Rent 1: 50 LGR
+Rent 2: 150 LGR
+Rent 3: 450 LGR
+Rent L: 625 LGR
+Akuisisi: 70 LGR
+Rumah 1: 100 LGR
+Rumah 2: 100 LGR
+Rumah 3: 100 LGR
+Landmark: 100 LGR
+
+C1 : Beijing
+Deskripsi: Kota ini dikenal dengan banyaknya hewan anjing
+Rent 0: 10 LGR
+Rent 1: 50 LGR
+Rent 2: 150 LGR
+Rent 3: 450 LGR
+Rent L: 625 LGR
+Akuisisi: 70 LGR
+Rumah 1: 100 LGR
+Rumah 2: 100 LGR
+Rumah 3: 100 LGR
+Landmark: 100 LGR
+
+C2 : Seoul
+Deskripsi: Seoul adalah ibukota Korea imnida. Kamsahamnida
+Rent 0: 12 LGR
+Rent 1: 60 LGR
+Rent 2: 180 LGR
+Rent 3: 500 LGR
+Rent L: 700 LGR
+Akuisisi: 80 LGR
+Rumah 1: 100 LGR
+Rumah 2: 100 LGR
+Rumah 3: 100 LGR
+Landmark: 100 LGR
+
+C3 : Tokyo
+Deskripsi: Tokyo bersebelahan dengan Kyoto
+Rent 0: 14 LGR
+Rent 1: 70 LGR
+Rent 2: 200 LGR
+Rent 3: 550 LGR
+Rent L: 750 LGR
+Akuisisi: 90 LGR
+Rumah 1: 100 LGR
+Rumah 2: 100 LGR
+Rumah 3: 100 LGR
+Landmark: 100 LGR
+
+D1 : Taiwan
+Deskripsi: Taiwan merupakan properti khusus mas wawan
+Rent 0: 14 LGR
+Rent 1: 70 LGR
+Rent 2: 200 LGR
+Rent 3: 550 LGR
+Rent L: 750 LGR
+Akuisisi: 90 LGR
+Rumah 1: 100 LGR
+Rumah 2: 100 LGR
+Rumah 3: 100 LGR
+Landmark: 100 LGR
+
+D2 : Hongkong
+Deskripsi: Hongkong merupakan tempat nongkrong
+Rent 0: 16 LGR
+Rent 1: 80 LGR
+Rent 2: 220 LGR
+Rent 3: 600 LGR
+Rent L: 800 LGR
+Akuisisi: 100 LGR
+Rumah 1: 100 LGR
+Rumah 2: 100 LGR
+Rumah 3: 100 LGR
+Landmark: 100 LGR
+
+D3 : Pyongyang
+Deskripsi: Kota utama bermain ping pong
+Rent 0: 18 LGR
+Rent 1: 90 LGR
+Rent 2: 250 LGR
+Rent 3: 700 LGR
+Rent L: 875 LGR
+Akuisisi: 110 LGR
+Rumah 1: 150 LGR
+Rumah 2: 150 LGR
+Rumah 3: 150 LGR
+Landmark: 150 LGR
+
+E1 : Ottawa
+Deskripsi: Kotanya suka ketawa
+Rent 0: 18 LGR
+Rent 1: 90 LGR
+Rent 2: 250 LGR
+Rent 3: 700 LGR
+Rent L: 875 LGR
+Akuisisi: 110 LGR
+Rumah 1:150 LGR
+Rumah 2: 150 LGR
+Rumah 3: 150 LGR
+Landmark: 150 LGR
+
+E2 : New York
+Deskripsi: Ini yang ada patung Liberty
+Rent 0: 20 LGR
+Rent 1: 100 LGR
+Rent 2: 300 LGR
+Rent 3: 750 LGR
+Rent L: 925 LGR
+Akuisisi: 120 LGR
+Rumah 1: 150 LGR
+Rumah 2: 150 LGR
+Rumah 3: 150 LGR
+Landmark: 150 LGR
+
+E3 : Buenos Aires
+Deskripsi: Mayoritas warga zodiaknya aries
+Rent 0: 22 LGR
+Rent 1: 110 LGR
+Rent 2: 330 LGR
+Rent 3: 800 LGR
+Rent L: 975 LGR
+Akuisisi: 130 LGR
+Rumah 1: 150 LGR
+Rumah 2: 150 LGR
+Rumah 3: 150 LGR
+Landmark: 150 LGR
+
+F1 : Cape Town
+Deskripsi: Bukan kota cape
+Rent 0: 22 LGR
+Rent 1: 110 LGR
+Rent 2: 330 LGR
+Rent 3: 800 LGR
+Rent L: 975 LGR
+Akuisisi: 130 LGR
+Rumah 1: 150 LGR
+Rumah 2: 150 LGR
+Rumah 3: 150 LGR
+Landmark: 150 LGR
+
+F2 : Port Louis
+Deskripsi: Kota penuh polusi
+Rent 0: 24 LGR
+Rent 1: 120 LGR
+Rent 2: 360 LGR
+Rent 3: 850 LGR
+Rent L: 1025 LGR
+Akuisisi: 140 LGR
+Rumah 1: 150 LGR
+Rumah 2: 150 LGR
+Rumah 3: 150 LGR
+Landmark: 150 LGR
+
+F3 : Cairo
+Deskripsi:  Tempat penghuni aero
+Rent 0: 26 LGR
+Rent 1: 130 LGR
+Rent 2: 390 LGR
+Rent 3: 900 LGR
+Rent L: 1100 LGR
+Akuisisi: 150 LGR
+Rumah 1: 200 LGR
+Rumah 2: 200 LGR
+Rumah 3: 200 LGR
+Landmark: 200 LGR
+
+G1 : Berlin
+Deskripsi: Banyak berlian di kota ini
+Rent 0: 26 LGR
+Rent 1: 130 LGR
+Rent 2: 390 LGR
+Rent 3: 900 LGR
+Rent L: 1100 LGR
+Akuisisi: 150 LGR
+Rumah 1: 200 LGR
+Rumah 2: 200 LGR
+Rumah 3: 200 LGR
+Landmark: 200 LGR
+
+G2 : Paris
+Deskripsi: Katanya Bonjour van java
+Rent 0: 28 LGR
+Rent 1: 150 LGR
+Rent 2: 450 LGR
+Rent 3: 1000 LGR
+Rent L: 1200 LGR
+Akuisisi: 160 LGR
+Rumah 1: 200 LGR
+Rumah 2: 200 LGR
+Rumah 3: 200 LGR
+Landmark: 200 LGR
+
+G3 : London
+Deskripsi : Mother city of UK
+Rent 0: 35 LGR
+Rent 1: 175 LGR
+Rent 2: 500 LGR
+Rent 3: 1100 LGR
+Rent L: 1250 LGR
+Akuisisi: 175 LGR
+Rumah 1: 200 LGR
+Rumah 2: 200 LGR
+Rumah 3: 200 LGR
+Landmark: 200 LGR
+
+H1 : Sydney
+Deskripsi : Kotanya suka manggil-manggil
+Rent 0: 50 LGR
+Rent 1: 200 LGR
+Rent 2: 550 LGR
+Rent 3: 1150 LGR
+Rent L: 1300 LGR
+Akuisisi: 200 LGR
+Rumah 1: 200 LGR
+Rumah 2: 200 LGR
+Rumah 3: 200 LGR
+Landmark: 200 LGR
+
+H2 : Melbourne
+Deskripsi: Kotanya meleleh kalo dibakar
+Rent 0: 60 LGR
+Rent 1: 225 LGR
+Rent 2: 600 LGR
+Rent 3: 1200 LGR
+Rent L: 1350 LGR
+Akuisisi: 225 LGR
+Rumah 1: 200 LGR
+Rumah 2: 200 LGR
